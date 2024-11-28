@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>BBC Website Headers</h1>
+
+  <!-- Fetch button for headers -->
+  <button class="fetch-btn" (click)="fetchHeaders()">Fetch Headers</button>
+
+  <!-- Loading Spinner, visible when headers are loading -->
+  <div *ngIf="headers.length === 0" class="spinner"></div>
+
+  <!-- List of fetched headers -->
+  <ul>
+    <li *ngFor="let header of headers">{{ header }}</li>
+  </ul>
+</div>
