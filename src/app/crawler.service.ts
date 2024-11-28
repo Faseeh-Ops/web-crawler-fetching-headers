@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, map } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {map, Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -16,10 +16,9 @@ export class CrawlerService {
         // Extract headers from the response
         const parser = new DOMParser();
         const doc = parser.parseFromString(response, 'text/html');
-        const headers = Array.from(doc.querySelectorAll('h1, h2, h3')).map(
+        return Array.from(doc.querySelectorAll('h1, h2, h3')).map(
           (el) => el.textContent?.trim() || ''
         );
-        return headers;
       })
     );
   }
