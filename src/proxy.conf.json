@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "https://www.bbc.com",
+    "target": "https://www.bbc.com/news",
     "secure": false,
     "changeOrigin": true,
     "pathRewrite": {

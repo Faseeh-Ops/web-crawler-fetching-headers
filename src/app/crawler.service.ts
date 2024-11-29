@@ -16,7 +16,7 @@ export class CrawlerService {
         // Extract headers from the response
         const parser = new DOMParser();
         const doc = parser.parseFromString(response, 'text/html');
-        return Array.from(doc.querySelectorAll('h1, h2, h3')).map(
+        return Array.from(doc.querySelectorAll('h1,h2,h3')).map(
           (el) => el.textContent?.trim() || ''
         );
       })
