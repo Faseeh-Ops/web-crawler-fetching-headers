@@ -1,20 +1,19 @@
 <div class="container">
   <h1>BBC Website Data Fetcher</h1>
 
-  <!-- Button to fetch headers -->
+
   <button class="fetch-btn" (click)="fetchHeaders()">Fetch Headers</button>
 
-  <!-- Button to fetch descriptions -->
   <button class="display-descriptions-btn" (click)="fetchDescriptions()">Fetch Descriptions</button>
 
-  <!-- Loading Spinner -->
+
   <div *ngIf="loading" class="spinner"></div>
 
-  <!-- List of headers -->
+
   <ul>
     <li *ngFor="let header of headers; let index = index">
       {{ header }}
-      <!-- Optional: Display the associated description -->
+
       <p *ngIf="descriptions[index]">{{ descriptions[index] }}</p>
     </li>
   </ul>

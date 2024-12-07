@@ -16,7 +16,6 @@ export class AppComponent {
 
   private crawlerService = inject(CrawlerService);
 
-  // Fetch headers
   fetchHeaders() {
     this.loading = true; // Start spinner
     this.crawlerService.getHeaders().subscribe((data: string[]) => {
@@ -25,7 +24,6 @@ export class AppComponent {
     });
   }
 
-  // Fetch descriptions
   fetchDescriptions() {
     this.loading = true; // Start spinner
     this.crawlerService.getDescriptions().subscribe((data: string[]) => {

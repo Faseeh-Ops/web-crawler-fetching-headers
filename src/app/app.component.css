@@ -183,10 +183,10 @@ ul li p {
   margin: 10px 0 0;
   font-size: 0.9rem;
   color: #666; /* Gray for descriptions */
-  font-style: italic; /* Italicize descriptions */
+  font-style: italic;
 }
 
-/* Spinner for loading */
+
 .spinner {
   margin: 20px auto;
   border: 4px solid #f3f3f3;
@@ -196,7 +196,6 @@ ul li p {
   height: 50px;
   animation: spin 2s linear infinite;
 }
-
 @keyframes spin {
   0% {
     transform: rotate(0deg);
