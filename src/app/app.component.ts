@@ -11,16 +11,26 @@ import { CrawlerService } from './crawler.service';
 })
 export class AppComponent {
   headers: string[] = [];
+  descriptions: string[] = [];
+  loading: boolean = false; // Show spinner during fetch
+
   private crawlerService = inject(CrawlerService);
 
-  constructor() {
-    // Optional: Call this in the constructor if you want the headers to load when the component is initialized
-    // this.fetchHeaders();
-  }
-
+  // Fetch headers
   fetchHeaders() {
+    this.loading = true; // Start spinner
     this.crawlerService.getHeaders().subscribe((data: string[]) => {
       this.headers = data;
+      this.loading = false; // Stop spinner
+    });
+  }
+
+  // Fetch descriptions
+  fetchDescriptions() {
+    this.loading = true; // Start spinner
+    this.crawlerService.getDescriptions().subscribe((data: string[]) => {
+      this.descriptions = data;
+      this.loading = false; // Stop spinner
     });
   }
 }
