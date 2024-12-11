@@ -10,9 +10,10 @@ import { CrawlerService } from './crawler.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  title = 'practice';
   headers: string[] = [];
   descriptions: string[] = [];
-  loading: boolean = false; // Show spinner during fetch
+  loading= false; // Show spinner during fetch
 
   private crawlerService = inject(CrawlerService);
 
