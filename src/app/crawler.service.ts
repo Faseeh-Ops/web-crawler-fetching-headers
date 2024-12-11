@@ -30,7 +30,7 @@ export class CrawlerService {
         const parser = new DOMParser();
         const doc = parser.parseFromString(response, 'text/html');
         return Array.from(doc.querySelectorAll('p')).map(
-          (el) => el.textContent?.trim() || ''
+                (el) => el.textContent?.trim() ?? ''
         );
       })
     );
